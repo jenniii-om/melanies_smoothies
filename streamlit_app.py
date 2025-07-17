@@ -32,7 +32,8 @@ if ingredients_list:
         ingredients_string += fruit_chosen + ' '
         
         # New section to display fruityvice/smoothiefroot nutrition information
-        smoothiefroot_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
+        st.subheader(fruit_chosen + ' Nutrition Information')
+        smoothiefroot_response = requests.get("https://fruityvice.com/api/fruit/" + fruit_chosen)
         #st.text(smoothiefroot_response.json())
         sf_dr = st.dataframe(data=smoothiefroot_response.json(), use_container_width=True)
 
